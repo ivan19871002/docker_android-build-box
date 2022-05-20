@@ -22,7 +22,7 @@ If you use mac ,plse use this
         --build-arg GIT_NAME="<your name>" \
         --build-arg GIT_EMAIL="<your email-address>" \
         --build-arg ROOT_PASSWD="<your root password>" \
-	.
+        .
 
 
 This image will expect the following locations to contain :
