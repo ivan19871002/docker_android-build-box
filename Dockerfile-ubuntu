@@ -1,6 +1,7 @@
 # Android Build Box based on Ubuntu 20.04 LTS
 #
 # 2020-04-27 by Yank555.lu
+# 2022-05-20 Update by Ivan Huang
 
 FROM ubuntu:focal
 USER root
@@ -54,6 +55,9 @@ RUN chmod 700 /home/$USER_NAME/.ssh
 COPY ssh-config /home/$USER_NAME/.ssh/config
 RUN chown $USER_NAME:$USER_NAME /home/$USER_NAME/.ssh/config
 RUN chmod 600 /home/$USER_NAME/.ssh/config
+
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
+COPY sources.list /etc/apt/sources.list
 
 # Install dependencies
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
@@ -119,7 +123,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     && apt-get clean && apt-get autoremove && rm -rf /var/lib/apt/lists/*
 
 # Download latest repo command
-RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /home/$USER_NAME/bin/repo
+RUN curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > /home/$USER_NAME/bin/repo
 RUN chmod 755 /home/$USER_NAME/bin/repo
 
 # Change user and working directory

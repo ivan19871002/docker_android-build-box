@@ -15,6 +15,16 @@ Additionally, it will also preconfigure your git identity.
         --build-arg ROOT_PASSWD="<your root password>" \
         .
 
+If you use mac ,plse use this
+
+    docker build -t android-build-box:focal \
+        --build-arg USER_NAME=$USER \
+        --build-arg GIT_NAME="<your name>" \
+        --build-arg GIT_EMAIL="<your email-address>" \
+        --build-arg ROOT_PASSWD="<your root password>" \
+	.
+
+
 This image will expect the following locations to contain :
 
     /home/sources : sources to compile
