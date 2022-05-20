@@ -20,11 +20,7 @@ export CCACHE_NOHASHDIR=true
 
 export LC_ALL=C
 
-# Set out dir
-export OUT_DIR_COMMON_BASE=/home/out
-
 # Define aliases to ease things up
-alias cdout='cd /home/out'
 alias cdroms='cd /home/source'
 alias makeclean='make clean'
 alias envsetup='source build/envsetup.sh;croot'
@@ -32,7 +28,6 @@ alias envsetup='source build/envsetup.sh;croot'
 echo "Available Aliases"
 echo "-----------------"
 echo " "
-echo "  cdout       : go to root of out folder"
 echo "  cdroms      : go to root of rom sources folder"
 echo "  makeclean   : remove previous compilation data"
 echo "  envsetup    : source build environment config in current path"
@@ -42,7 +37,6 @@ echo "--------------"
 echo " "
 echo "  CCACHE DIR  : $CCACHE_DIR"
 echo "  CCACHE EXEC : $CCACHE_EXEC"
-echo "  OUT DIR     : $OUT_DIR_COMMON_BASE"
 echo " "
 echo "Docker image build timestamp"
 echo "----------------------------"
